@@ -18,6 +18,10 @@ sudo vi /etc/docker/daemon.json
 sudo service docker restart
 
 
+
+
+### only on master
+
 ### INSTALL KUBEADM,KUBELET,KUBECTL
 
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
@@ -30,6 +34,9 @@ sudo mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
+
+
+## on nodes
 ## Weave Pod Network
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')" 
 
