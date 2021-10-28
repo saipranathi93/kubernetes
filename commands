@@ -1,0 +1,8 @@
+### NAME SPACE -LS
+kubectl config get-contexts
+
+### ADDING NAME SPACE
+ kubectl config set-context dev --namespace=development --user=kubernetes-admin --cluster=kubernetes
+ 
+ ## SWCHING ANOTHER NAME-SPACE
+ kubectl config use-context dev
